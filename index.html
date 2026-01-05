@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLOG - ABRAR ISHRAQ TOHA</title>
+  <link rel="icon" href="ttt.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e40af',
+            primaryDark: '#1e3a8a',
+            secondary: '#2563eb',
+            accent: '#00CFFF',
+            lightGray: '#f8fafc'
+          },
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-3px) scale(1.1);
+    }
+    .member-card {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .member-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(to right, #1e40af, #00CFFF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .stat-card {
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    .footer-link {
+      transition: all 0.2s ease;
+    }
+    .footer-link:hover {
+      color: #00CFFF;
+      padding-left: 5px;
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231e3a8a' fill-opacity='1' d='M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+    }
+    
+    /* Button styles */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #1e40af, #2563eb);
+      color: white;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .btn-secondary {
+      background: linear-gradient(to right, #00CFFF, #1e40af);
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: linear-gradient(90deg, #1e40af, #00CFFF);
+      border-radius: 2px;
+    }
+    
+    .policy-section {
+      margin-bottom: 2rem;
+    }
+    
+    .policy-subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .policy-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .policy-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 0.8rem;
+    }
+    
+    .policy-list li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #00CFFF;
+      font-weight: bold;
+    }
+    
+    /* Gallery Styles */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .gallery-item img, .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img, .gallery-item:hover video {
+      transform: scale(1.05);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+      padding: 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+    
+    .tab-button {
+      padding: 8px 16px;
+      margin-right: 10px;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-button.active {
+      background: linear-gradient(to right, #1e40af, #2563eb);
+      color: white;
+    }
+    
+    .tab-button:not(.active) {
+      background: #e5e7eb;
+      color: #4b5563;
+    }
+    
+    .tab-button:not(.active):hover {
+      background: #d1d5db;
+    }
+    
+    .filter-button {
+      padding: 6px 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-button.active {
+      background: linear-gradient(to right, #1e40af, #2563eb);
+      color: white;
+    }
+    
+    .filter-button:not(.active) {
+      background: #e5e7eb;
+      color: #4b5563;
+    }
+    
+    .filter-button:not(.active):hover {
+      background: #d1d5db;
+    }
+    
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      overflow: auto;
+    }
+    
+    .lightbox-content {
+      position: relative;
+      margin: auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 50px;
+    }
+    
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .close-lightbox:hover {
+      color: #00CFFF;
+    }
+    
+    .lightbox-media {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      max-height: 80vh;
+    }
+    
+    .lightbox-caption {
+      color: #f1f1f1;
+      text-align: center;
+      padding-top: 20px;
+    }
+    
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .lightbox-nav button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 50%;
+      margin: 0 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .lightbox-nav button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00CFFF;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="https://www.pmtoha.site/" class="flex items-center">
+      <img src="ttt.png" alt="Photo" class="h-10">
+      <span class="ml-3 font-bold text-xl">TOHA</span>
+    </a>
+    <div class="hidden md:flex space-x-6">
+
+    </div>
+    <button id="menuBtn" class="md:hidden text-primary">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
+    <div class="px-4 py-2 space-y-2">
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-28 pb-16 bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-black opacity-10"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Photo and Video Gallery</h1>
+    <p class="text-lg max-w-2xl mx-auto animate-fade-in opacity-90">Explore my collection of photographs and video content</p>
+  </div>
+  <div class="wave"></div>
+</section>
+
+<!-- Spacer -->
+<div class="h-12"></div>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 bg-lightGray">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">My Gallery</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Browse through my collection of photos and videos showcasing my work and experiences</p>
+      </div>
+      
+      <!-- Gallery Tabs -->
+      <div class="flex justify-center mb-8">
+        <button class="tab-button active" data-tab="all">All</button>
+        <button class="tab-button" data-tab="photo">Photos</button>
+        <button class="tab-button" data-tab="video">Videos</button>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center mb-8" id="filterButtons">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="nature">Nature</button>
+        <button class="filter-button" data-filter="travel">Travel</button>
+        <button class="filter-button" data-filter="people">People</button>
+      </div>
+      
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="galleryGrid">
+        <!-- Photo Items -->
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="78987654456.png" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">😶😶</h3>
+            <p class="text-gray-200 text-sm">November 19,2025</p>
+          </div>
+        </div>
+        
+
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="1738934487173.jpg" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">National Parliament Building, Bangladesh</h3>
+            <p class="text-gray-200 text-sm">April 8,2025</p>
+          </div>
+        </div>
+              
+        <div class="gallery-item" data-type="video" data-category="events">
+          <video poster="#">
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">...</h3>
+            <p class="text-gray-200 text-sm">...</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="1739199433395-01.jpeg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">National Martyrs' Monument, Bangladesh</h3>
+            <p class="text-gray-200 text-sm">February 10,2023</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20230815_132827.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Dove Bird</h3>
+            <p class="text-gray-200 text-sm">August 15,2023</p>
+          </div>
+        </div>
+
+
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20221004_120008.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Rajshahi Railway Station</h3>
+            <p class="text-gray-200 text-sm">October 04,2022</p>
+          </div>
+        </div>
+
+
+        <div class="gallery-item" data-type="photo" data-category="travel">
+          <img src="20221225_070826.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Cox's Bazar</h3>
+            <p class="text-gray-200 text-sm">December 25,2022</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20221221_125709.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Kaptai Lake</h3>
+            <p class="text-gray-200 text-sm">December 21,2022</p>
+          </div>
+        </div>
+
+         <div class="gallery-item" data-type="photo" data-category="travel">
+          <img src="20221221_101449-01.jpeg" alt="Travel Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Kaptai Lake</h3>
+            <p class="text-gray-200 text-sm">December 21,2022</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20221221_121107.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Kaptai Lake</h3>
+            <p class="text-gray-200 text-sm">December 21,2022</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="20211023_143840.jpg" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Covid 19 Time</h3>
+            <p class="text-gray-200 text-sm">October 23,2021</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="Photo-0284.jpg" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Childhood, Rajshahi</h3>
+            <p class="text-gray-200 text-sm">January 03,2015</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <span class="close-lightbox">&times;</span>
+    <div id="lightboxMedia" class="lightbox-media-container"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-nav">
+      <button id="prevLightbox"><i class="fas fa-chevron-left"></i></button>
+      <button id="nextLightbox"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Spacer -->
+<div class="h-12"></div>
+
+
+
+<!-- Social Link Section -->
+<section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">Connect With Me</h2>
+    <div class="flex justify-center space-x-6 flex-wrap">
+      <a href="https://www.facebook.com/pmabrarishraq6toha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-facebook-f text-2xl"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/pm-toha06" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-linkedin text-2xl"></i>
+      </a>
+      <a href="https://twitter.com/AbrarIshraqToha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-twitter text-2xl"></i>
+      </a>
+      <a href="https://github.com/pmtoha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-github text-2xl"></i>
+      </a>
+      <a href="https://threads.net/pm.toha" class="social-icon text-white hover:text-accent transition" title="Threads">
+        <i class="fa-brands fa-threads text-2xl"></i>
+      </a>
+      <a href="https://instagram.com/pm.toha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a href="https://reddit.com/user/pm-toha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-reddit text-2xl"></i>
+      </a>
+      <a href="https://t.me/toha37x" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-telegram text-2xl"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primaryDark text-white pt-16 pb-8 relative">
+  <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-accent to-primary"></div>
+  <div class="container mx-auto px-4">
+    <!-- Copyright -->
+    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-300 mb-4 md:mb-0">&copy; 2025 Made by Toha. All rights reserved.</p>
+      <div class="flex space-x-6">
+        <a href="https://www.pmtoha.site/Privacy-Policy" class="text-gray-300 hover:text-accent transition">Privacy Policy</a>
+        <a href="https://www.pmtoha.site/Terms-of-Service" class="text-gray-300 hover:text-accent transition">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = menuBtn.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+  
+  // Gallery functionality
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxMedia = document.getElementById('lightboxMedia');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const closeLightbox = document.querySelector('.close-lightbox');
+  const prevLightbox = document.getElementById('prevLightbox');
+  const nextLightbox = document.getElementById('nextLightbox');
+  
+  let currentLightboxIndex = 0;
+  let visibleGalleryItems = [];
+  
+  // Tab functionality
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      const tab = button.getAttribute('data-tab');
+      filterGallery(tab, document.querySelector('.filter-button.active').getAttribute('data-filter'));
+    });
+  });
+  
+  // Filter functionality
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      const filter = button.getAttribute('data-filter');
+      const activeTab = document.querySelector('.tab-button.active').getAttribute('data-tab');
+      filterGallery(activeTab, filter);
+    });
+  });
+  
+  function filterGallery(tab, filter) {
+    visibleGalleryItems = [];
+    
+    galleryItems.forEach(item => {
+      const type = item.getAttribute('data-type');
+      const category = item.getAttribute('data-category');
+      
+      if ((tab === 'all' || type === tab) && (filter === 'all' || category === filter)) {
+        item.style.display = 'block';
+        visibleGalleryItems.push(item);
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+  
+  // Lightbox functionality
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      currentLightboxIndex = visibleGalleryItems.indexOf(item);
+      openLightbox(item);
+    });
+  });
+  
+  function openLightbox(item) {
+    const type = item.getAttribute('data-type');
+    const img = item.querySelector('img');
+    const video = item.querySelector('video');
+    const title = item.querySelector('.gallery-overlay h3').textContent;
+    const description = item.querySelector('.gallery-overlay p').textContent;
+    
+    lightboxMedia.innerHTML = '';
+    
+    if (type === 'photo' && img) {
+      const lightboxImg = document.createElement('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxImg.className = 'lightbox-media';
+      lightboxMedia.appendChild(lightboxImg);
+    } else if (type === 'video' && video) {
+      const lightboxVideo = document.createElement('video');
+      lightboxVideo.src = video.querySelector('source').src;
+      lightboxVideo.controls = true;
+      lightboxVideo.className = 'lightbox-media';
+      lightboxMedia.appendChild(lightboxVideo);
+    }
+    
+    lightboxCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+    lightbox.style.display = 'block';
+  }
+  
+  closeLightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    
+    // Stop video if playing
+    const lightboxVideo = lightboxMedia.querySelector('video');
+    if (lightboxVideo) {
+      lightboxVideo.pause();
+    }
+  });
+  
+  prevLightbox.addEventListener('click', () => {
+    currentLightboxIndex = (currentLightboxIndex - 1 + visibleGalleryItems.length) % visibleGalleryItems.length;
+    openLightbox(visibleGalleryItems[currentLightboxIndex]);
+  });
+  
+  nextLightbox.addEventListener('click', () => {
+    currentLightboxIndex = (currentLightboxIndex + 1) % visibleGalleryItems.length;
+    openLightbox(visibleGalleryItems[currentLightboxIndex]);
+  });
+  
+  // Close lightbox when clicking outside of media
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      
+      // Stop video if playing
+      const lightboxVideo = lightboxMedia.querySelector('video');
+      if (lightboxVideo) {
+        lightboxVideo.pause();
+      }
+    }
+  });
+  
+  // Initialize gallery with all items visible
+  filterGallery('all', 'all');
+</script>
+
+</body>
+</html>
