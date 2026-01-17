@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLOG - ABRAR ISHRAQ TOHA</title>
+  <link rel="icon" href="ttt.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-50 font-inter">
+
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="https://www.pmtoha.site/" class="flex items-center">
+      <img src="ttt.png" alt="Photo" class="h-10">
+      <span class="ml-3 font-bold text-xl">TOHA</span>
+    </a>
+    <div class="hidden md:flex space-x-6">
+
+    </div>
+    <button id="menuBtn" class="md:hidden text-primary">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
+    <div class="px-4 py-2 space-y-2">
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-28 pb-16 bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-black opacity-10"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Photo and Video Gallery</h1>
+    <p class="text-lg max-w-2xl mx-auto animate-fade-in opacity-90">Explore my collection of photographs and video content</p>
+  </div>
+  <div class="wave"></div>
+</section>
+
+<!-- Spacer -->
+<div class="h-12"></div>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 bg-lightGray">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">My Gallery</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Browse through my collection of photos and videos showcasing my work and experiences</p>
+      </div>
+      
+      <!-- Gallery Tabs -->
+      <div class="flex justify-center mb-8">
+        <button class="tab-button active" data-tab="all">All</button>
+        <button class="tab-button" data-tab="photo">Photos</button>
+        <button class="tab-button" data-tab="video">Videos</button>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center mb-8" id="filterButtons">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="nature">Nature</button>
+        <button class="filter-button" data-filter="travel">Travel</button>
+        <button class="filter-button" data-filter="people">People</button>
+      </div>
+      
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="galleryGrid">
+        <!-- Photo Items -->
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="78987654456.png" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">😶😶</h3>
+            <p class="text-gray-200 text-sm">November 19,2025</p>
+          </div>
+        </div>
+        
+
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="1738934487173.jpg" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">National Parliament Building, Bangladesh</h3>
+            <p class="text-gray-200 text-sm">April 8,2025</p>
+          </div>
+        </div>
+              
+        <div class="gallery-item" data-type="video" data-category="events">
+          <video poster="#">
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">...</h3>
+            <p class="text-gray-200 text-sm">...</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="1739199433395-01.jpeg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">National Martyrs' Monument, Bangladesh</h3>
+            <p class="text-gray-200 text-sm">February 10,2023</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20230815_132827.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Dove Bird</h3>
+            <p class="text-gray-200 text-sm">August 15,2023</p>
+          </div>
+        </div>
+
+
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20221004_120008.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Rajshahi Railway Station</h3>
+            <p class="text-gray-200 text-sm">October 04,2022</p>
+          </div>
+        </div>
+
+
+        <div class="gallery-item" data-type="photo" data-category="travel">
+          <img src="20221225_070826.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Cox's Bazar</h3>
+            <p class="text-gray-200 text-sm">December 25,2022</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20221221_125709.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Kaptai Lake</h3>
+            <p class="text-gray-200 text-sm">December 21,2022</p>
+          </div>
+        </div>
+
+         <div class="gallery-item" data-type="photo" data-category="travel">
+          <img src="20221221_101449-01.jpeg" alt="Travel Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Kaptai Lake</h3>
+            <p class="text-gray-200 text-sm">December 21,2022</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-type="photo" data-category="nature">
+          <img src="20221221_121107.jpg" alt="Nature Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Kaptai Lake</h3>
+            <p class="text-gray-200 text-sm">December 21,2022</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="20211023_143840.jpg" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Covid 19 Time</h3>
+            <p class="text-gray-200 text-sm">October 23,2021</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-type="photo" data-category="events">
+          <img src="Photo-0284.jpg" alt="Event Photo">
+          <div class="gallery-overlay">
+            <h3 class="text-white font-semibold">Childhood, Rajshahi</h3>
+            <p class="text-gray-200 text-sm">January 03,2015</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <span class="close-lightbox">&times;</span>
+    <div id="lightboxMedia" class="lightbox-media-container"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-nav">
+      <button id="prevLightbox"><i class="fas fa-chevron-left"></i></button>
+      <button id="nextLightbox"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Spacer -->
+<div class="h-12"></div>
+
+
+
+<!-- Social Link Section -->
+<section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">Connect With Me</h2>
+    <div class="flex justify-center space-x-6 flex-wrap">
+      <a href="https://www.facebook.com/pmabrarishraq6toha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-facebook-f text-2xl"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/pm-toha06" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-linkedin text-2xl"></i>
+      </a>
+      <a href="https://twitter.com/AbrarIshraqToha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-twitter text-2xl"></i>
+      </a>
+      <a href="https://github.com/pmtoha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-github text-2xl"></i>
+      </a>
+      <a href="https://threads.net/pm.toha" class="social-icon text-white hover:text-accent transition" title="Threads">
+        <i class="fa-brands fa-threads text-2xl"></i>
+      </a>
+      <a href="https://instagram.com/pm.toha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a href="https://reddit.com/user/pm-toha" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-reddit text-2xl"></i>
+      </a>
+      <a href="https://t.me/toha37x" class="social-icon text-white hover:text-accent transition">
+        <i class="fab fa-telegram text-2xl"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primaryDark text-white pt-16 pb-8 relative">
+  <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-accent to-primary"></div>
+  <div class="container mx-auto px-4">
+    <!-- Copyright -->
+    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-300 mb-4 md:mb-0">&copy; 2026 Made by Toha. All rights reserved.</p>
+      <div class="flex space-x-6">
+        <a href="https://www.pmtoha.site/Privacy-Policy" class="text-gray-300 hover:text-accent transition">Privacy Policy</a>
+        <a href="https://www.pmtoha.site/Terms-of-Service" class="text-gray-300 hover:text-accent transition">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <link rel="stylesheet" href="view.css"> 
+    <script src="go.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
